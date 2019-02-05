@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS + CSS Clock</title>
+</head>
+<body>
+
+
+    <div class="clock">
+      <div class="clock-inner">
+        <div class="clock-numbers">
+          <div class="notch first-notch"></div>
+          <div class="notch second-notch"></div>
+          <div class="notch third-notch"></div>
+          <div class="notch fourth-notch"></div>
+        </div>
+        <div class="clock-face">
+          <div class="hand hour-hand"></div>
+          <div class="hand min-hand"></div>
+          <div class="hand second-hand"></div>
+          <div class="clock-center"></div>
+        </div>
+    </div>
+    </div>
+
+
+  <style>
+    html {
+      background:linear-gradient(#DFE1F5, #CFE4F8);
+      font-family:'Helvetica Neue';
+      text-align: center;
+      font-size: 10px;
+    }
+
+    body {
+      margin: 0;
+      font-size: 2rem;
+      display:flex;
+      flex:1;
+      min-height: 100vh;
+      align-items: center;
+    }
+
+    .clock {
+      width: 30rem;
+      height: 30rem;
+      border: 7px solid #e6c6b3;
+      background: rgba(230,198,179,0.9);
+      border-radius:50%;
+      margin:50px auto;
+      position: relative;
+      padding:2rem;
+      box-shadow:
+        0px 0px 3px 3px rgba(0,0,0,0.1),
+        5px 10px 20px rgba(75,75,75,0.3);
+    }
+    .clock-inner{
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 100%;
+      background: #ECECEC;
+    }
+    .clock-numbers{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+    }
+    .notch{
+      width: 10px;
+      height: 3px;
+      background: rgba(33,33,33,0.3);
+      display: block;
+      position: absolute;
+      border-radius: 100%;
+    }
+    .notch.first-notch{
+      top: 2%;
+      left: 49%;
+      transform: rotate(90deg)
+    }
+    .notch.second-notch{
+      top: 50%;
+      right:1%;
+    }
+    .notch.third-notch{
+      bottom: 2%;
+      left: 48%;
+      transform: rotate(90deg);
+    }
+    .notch.fourth-notch{
+      top: 50%;
+      left: 1%;
+    }
+    .clock-face {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+    .hand {
+      width: 45%;
+      height:6px;
+      background:#eac27b;
+      position: absolute;
+      top:50%;
+      left: 5%;
+      border-radius: 5px 0px 0px 5px;
+      transform-origin: 100%;
+      transform: rotate(90deg);
+      transition: all 0.05s ease-in-out;
+      transition-timing-function: cubic-bezier(0.5, 2.67, 0.49, 0.62);
+    }
+    .hand.second-hand {
+      height: 3px;
+      background: #bbaeb1;
+      border-radius: 3px 0px 0px 3px;
+    }
+    .hand.hour-hand {
+      width: 30%;
+      left: 20%;   
+    }
+    .clock-center{
+      width: 15px;
+      height: 15px;
+      border-radius: 100%;
+      position:  absolute;
+      top: 48%;
+      left: 47%;
+      z-index: 10;
+      background: #bbaeb1;
+    }
+  </style>
+
+  <script>
+    const secondHand = document.querySelector('.second-hand');
+    const minuteHand = document.querySelector('.min-hand');
+    const hourHand = document.querySelector('.hour-hand');
+    
+    function setDate(){
+      const now = new Date();
+      const seconds = now.getSeconds();
+      const minutes = now.getMinutes();
+      const hour = now.getHours();
+
+      const secondsDegrees = ((seconds / 60) * 360) + 90;
+      const minutesDegrees = ((minutes / 60 ) * 360) + ((seconds / 60) * 6) + 90;
+      const hoursDegrees = ((hour / 12) * 360) + ((minutes / 60) * 30) + 90;
+
+      secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
+      minuteHand.style.transform = `rotate(${minutesDegrees}deg)`;
+      hourHand.style.transform = `rotate(${hoursDegrees}deg)`;
+    }
+
+    setInterval(setDate, 1000);
+
+  </script>
+</body>
+</html>
