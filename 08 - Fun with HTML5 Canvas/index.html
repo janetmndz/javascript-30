@@ -5,24 +5,117 @@
   <title>HTML5 Canvas</title>
 </head>
 <body>
-<canvas id="draw" width="800" height="800"></canvas>
-<script>
-  const canvas = document.querySelector('#draw');
-  const ctx = canvas.getContext('2d');
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-  ctx.strokeStyle = '#BADA55';
-  ctx.lineJoin = 'round';
-  ctx.lineCap = 'round';
-
-  let isDrawing = true;
-</script>
-
 <style>
+  html{
+    background: #EFEFEF;
+  }
   html, body {
     margin:0;
   }
+  .frame{
+    position: relative;
+    width: 75%;
+    max-width: 800px;
+    height: 50vh;
+    margin: 50px auto;
+    background: #CDCDCD;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .whiteboard{
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: calc(100% - 30px);
+    height: calc(100% - 30px);
+    border: 1px solid #c1c1c1;
+    border-radius: 25px;
+    z-index: 10;
+  }
+  canvas#draw{
+    width: 100%;
+    max-height: 100%;
+    border-radius: 5px;
+    background: #FDFDFD;
+    z-index: 100;
+  }
+  .corner{
+    background: #212121;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    z-index: 1;
+  }
+  .corner:nth-of-type(1){top: 0; left: 0;}
+  .corner:nth-of-type(2){top: 0; right: 0;}
+  .corner:nth-of-type(3){bottom: 0; left: 0;}
+  .corner:nth-of-type(4){bottom: 0; right: 0;}
 </style>
+<div class="frame">
+  <div class="whiteboard">
+      <canvas id="draw"></canvas>
+  </div>
+  <div class="corner"></div>
+  <div class="corner"></div>
+  <div class="corner"></div>
+  <div class="corner"></div>
+</div>
+<script>
+  const whiteboard = document.querySelector('.whiteboard');
+  const canvas = document.querySelector('#draw');
+  const ctx = canvas.getContext('2d');
+  canvas.width = whiteboard.offsetWidth;
+  canvas.height = whiteboard.offsetHeight;
+  ctx.strokeStyle = '#BADA55';
+  ctx.lineJoin = 'round';
+  ctx.lineCap = 'round'; 
+  ctx.lineWidth = 25;
 
+  let isDrawing = false;
+  let lastX = 0;
+  let lastY = 0;
+  let hue = 0;
+  let direction = true;
+
+  function draw(e){
+    //This stops the fn from running unless the mouse is down and in the window
+    if(!isDrawing) return;
+    ctx.strokeStyle = `hsl(${hue}, 100%, 85%)`;
+    ctx.lineWidth = 0;
+    ctx.beginPath();
+
+    //start from
+    ctx.moveTo(lastX, lastY);
+
+    //move to
+    ctx.lineTo(e.offsetX, e.offsetY);
+    ctx.stroke();
+
+    //setting values for hue and lineWidth
+    [lastX, lastY] = [e.offsetX, e.offsetY];
+    hue++;
+    if(hue >= 360){
+      hue = 0;
+    }
+
+    if(ctx.lineWidth >= 30 || ctx.lineWidth <= 10){
+      direction = !direction;
+    }
+    if(direction){
+      ctx.lineWidth++;
+    }
+    else{
+      ctx.lineWidth--
+    }
+  }
+
+  canvas.addEventListener('mousemove', draw);
+  canvas.addEventListener('mousedown', (e) => {
+    isDrawing= true;
+    [lastX, lastY] = [e.offsetX, e.offsetY];
+    });
+  canvas.addEventListener('mouseup', () => isDrawing= false);
+  canvas.addEventListener('mouseout', () => isDrawing= false);
+</script>
 </body>
 </html>
