@@ -3,6 +3,7 @@ node_modules/
 *.log
 haters/
 .idea/
+.vscode/
 
 PULL_REQUEST_TEMPLATE.md 
 index-FINISHED.html

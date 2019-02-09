@@ -3,19 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <title>Hold Shift to Check Multiple Checkboxes</title>
+  <link href="https://fonts.googleapis.com/css?family=Jaldi" rel="stylesheet">
 </head>
 <body>
   <style>
 
     html {
-      font-family: sans-serif;
-      background:#ffc600;
+      font-family: 'Jaldi', sans-serif;
+      background:#FFA987;
     }
 
     .inbox {
-      max-width:400px;
+      width: 80%;
+      max-width: 450px;
       margin:50px auto;
-      background:white;
+      background:#FFE8D1;
       border-radius:5px;
       box-shadow:10px 10px 0 rgba(0,0,0,0.1);
     }
@@ -23,7 +25,7 @@
     .item {
       display:flex;
       align-items:center;
-      border-bottom: 1px solid #F1F1F1;
+      border-bottom: 1px solid #C0C0C0;
     }
 
     .item:last-child {
@@ -32,33 +34,28 @@
 
 
     input:checked + p {
-      background:#F9F9F9;
-      text-decoration: line-through;
+      background:#FFF2E5;
+      text-decoration: line-through #DE3C4B;
     }
 
     input[type="checkbox"] {
-      margin:20px;
+      margin: 20px;
     }
 
     p {
-      margin:0;
-      padding:20px;
-      transition:background 0.2s;
+      margin: 0;
+      padding: 24px;
+      line-height: 1.15;
+      transition:background 0.3s;
       flex:1;
-      font-family:'helvetica neue';
+      font-family: inherit;
       font-size: 20px;
-      font-weight: 200;
-      border-left: 1px solid #D1E2FF;
+      font-weight: 300;
+      border-left: 1px solid #C0C0C0;
     }
 
 
   </style>
-   <!--
-   The following is a common layout you would see in an email client.
-
-   When a user clicks a checkbox, holds Shift, and then clicks another checkbox a few rows down, all the checkboxes inbetween those two checkboxes should be checked.
-
-  -->
   <div class="inbox">
     <div class="item">
       <input type="checkbox">
@@ -99,6 +96,26 @@
   </div>
 
 <script>
+  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+  let lastChecked;
+  let checking = false;
+
+  checkboxes.forEach(check => check.addEventListener("click", handleChecked));
+
+  function handleChecked(e){
+    if(e.shiftKey && this.checked){
+      checkboxes.forEach(check => {
+        if(check === this || check === lastChecked){
+          checking = !checking;
+        }
+        if(checking && !check.checked){
+          check.checked = true;
+        }
+      });
+    }
+    lastChecked = this;
+  }
+
 </script>
 </body>
 </html>
