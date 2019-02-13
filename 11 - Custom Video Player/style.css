@@ -12,7 +12,7 @@ body {
   display:flex;
   background:#7A419B;
   min-height:100vh;
-  background: linear-gradient(135deg, #7c1599 0%,#921099 48%,#7e4ae8 100%);
+  background-image: linear-gradient(to top, #dad4ec 0%, #dad4ec 1%, #f3e7e9 100%);
   background-size:cover;
   align-items: center;
   justify-content: center;
@@ -20,11 +20,10 @@ body {
 
 .player {
   max-width:750px;
-  border:5px solid rgba(0,0,0,0.2);
-  box-shadow:0 0 20px rgba(0,0,0,0.2);
+  box-shadow: 5px 5px 20px rgba(0,0,0,0.5);
   position: relative;
-  font-size: 0;
   overflow: hidden;
+  cursor: pointer;
 }
 
 /* This css is only applied when fullscreen is active. */
@@ -52,6 +51,11 @@ body {
   padding: 0;
   cursor:pointer;
   max-width:50px;
+}
+
+.fullscreen .fa{
+  font-size: 16px;
+  color: white;
 }
 
 .player__button:focus {
@@ -98,10 +102,10 @@ body {
 }
 
 .progress__filled {
-  width:50%;
+  width: 0%;
   background:#ffc600;
-  flex:0;
-  flex-basis:50%;
+  flex: 0;
+  flex-basis: 0%;
 }
 
 /* unholy css to style input type="range" */
@@ -117,7 +121,7 @@ input[type=range]:focus {
 }
 input[type=range]::-webkit-slider-runnable-track {
   width: 100%;
-  height: 8.4px;
+  height: 5px;
   cursor: pointer;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0 0 1px rgba(13, 13, 13, 0);
   background: rgba(255,255,255,0.8);
@@ -131,7 +135,7 @@ input[type=range]::-webkit-slider-thumb {
   background: #ffc600;
   cursor: pointer;
   -webkit-appearance: none;
-  margin-top: -3.5px;
+  margin-top: -5.5px;
   box-shadow:0 0 2px rgba(0,0,0,0.2);
 }
 input[type=range]:focus::-webkit-slider-runnable-track {
