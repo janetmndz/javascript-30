@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Key Detection</title>
+  <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+  <script type="text/javascript" src="http://www.cornify.com/js/cornify.js"></script>
+  <style type="text/css">
+    html, body{
+      margin: 0;
+      padding: 0;
+      background-color: #A63D40;
+      font-family: 'Muli', sans-serif;
+    }
+    main{
+      width: 100vw;
+      height: 75vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      justify-items: center;
+    }
+    h1{
+      font-size: 2rem;
+      color: #2A2A2A;
+      letter-spacing: 1px;
+      text-align: center;
+      line-height: 2.5;
+    }
+    span{
+      letter-spacing: 2px;
+      color: #151515;
+      text-shadow: 0px 4px 3px #883235
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Enter the secret word: <span>FATCAT</span></h1>
+  </main>
+<script>
+  const secretcode = 'fatcat';
+  const pressed = [];
+  window.addEventListener('keyup', (e) => {
+    pressed.push(e.key);
+    pressed.splice(-secretcode.length -1, pressed.length - secretcode.length);
+    if(pressed.join('').includes(secretcode)){
+      console.log('Ding! Ding!')
+    }
+  })
+</script>
+</body>
+</html>
