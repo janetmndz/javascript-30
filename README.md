@@ -19,7 +19,7 @@ Full collection of live examples can also can be viewed on [CodePen](https://cod
 | 09 | Dev Tools Domination             | [Github](./09%20-%20Dev%20Tools%20Domination)                                                       |
 | 10 | Hold Shift and Check Checkboxes  | [CodePen](https://codepen.io/janmez/full/KJQQbp) // [Github](./10%20-%20Hold%20Shift%20and%20Check%20Checkboxes) |
 | 11 | Custom Video Player              | [CodePen](https://codepen.io/janmez/full/vbMogq) // [Github](./11%20-%20Custom%20Video%20Player)    |
-| 12 | Key Sequence Detection           | [CodePen](https://codepen.io/janmez/full/mgbLjJ) // [GitHub](./12%20Key%20Sequence%20Detection)     |
+| 12 | Key Sequence Detection           | [CodePen](https://codepen.io/janmez/full/mgbLjJ) // [GitHub](./12%20-%20Key%20Sequence%20Detection)     |
 
 ## Details 
 Github repo for [Javascript 30](https://github.com/wesbos/JavaScript30).
