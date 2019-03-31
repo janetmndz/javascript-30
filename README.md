@@ -17,10 +17,11 @@ Full collection of live examples can also can be viewed on [CodePen](https://cod
 | 07 | Array Cardio Day 1               | [Github](./07%20-%20Array%20Cardio%20Day%202)                                                       |
 | 08 | Fun with HTML5 Canvas            | [CodePen](https://codepen.io/janmez/full/XOVxwe) // [Github](./08%20-%20Fun%20with%20HTML5%20Canvas)|
 | 09 | Dev Tools Domination             | [Github](./09%20-%20Dev%20Tools%20Domination)                                                       |
-| 10 | Hold Shift and Check Checkboxes  | [CodePen](https://codepen.io/janmez/full/KJQQbp) // [Github](./10%20-%20Hold%20Shift%20and%20Check%20Checkboxes) |
+| 10 | Hold Shift & Check Checkboxes    | [CodePen](https://codepen.io/janmez/full/KJQQbp) // [Github](./10%20-%20Hold%20Shift%20and%20Check%20Checkboxes) |
 | 11 | Custom Video Player              | [CodePen](https://codepen.io/janmez/full/vbMogq) // [Github](./11%20-%20Custom%20Video%20Player)    |
 | 12 | Key Sequence Detection           | [CodePen](https://codepen.io/janmez/full/mgbLjJ) // [GitHub](./12%20-%20Key%20Sequence%20Detection) |
 | 13 | Slide in on Scroll               | [CodePen](https://codepen.io/janmez/full/PgYrWd) // [Github](./13%20-%20Slide%20in%20on%20Scroll)   |
+| 14 | JavaScript References VS Copying | [Github](./14%20-%20JavaScript%20References%20VS%20Copying)                                         |
 
 ## Details 
 Github repo for [Javascript 30](https://github.com/wesbos/JavaScript30).
