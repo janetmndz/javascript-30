@@ -22,6 +22,7 @@ Full collection of live examples can also can be viewed on [CodePen](https://cod
 | 12 | Key Sequence Detection           | [CodePen](https://codepen.io/janmez/full/mgbLjJ) // [GitHub](./12%20-%20Key%20Sequence%20Detection) |
 | 13 | Slide in on Scroll               | [CodePen](https://codepen.io/janmez/full/PgYrWd) // [Github](./13%20-%20Slide%20in%20on%20Scroll)   |
 | 14 | JavaScript References VS Copying | [Github](./14%20-%20JavaScript%20References%20VS%20Copying)                                         |
+| 15 | LocalStorage & Event Delegation  | [Github](./15%20-%20LocalStorage) |
 
 ## Details 
 Github repo for [Javascript 30](https://github.com/wesbos/JavaScript30).
