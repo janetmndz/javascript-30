@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mouse Shadow</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+  <div class="hero">
+    <h1 class="text" contenteditable>Look around!</h1>
+  </div>
+
+  <style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body, html {
+    margin: 0;
+    padding: 0;
+    background: #ADA8B6;
+    font-family: "Open Sans", sans-serif;
+  }
+
+  .hero {
+    border: 10px solid #FEFEFE;
+    margin: 5vh auto;
+    height: 90vh;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(https://images.unsplash.com/photo-1497294815431-9365093b7331?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ);
+    background-size: cover;
+  }
+  .hero .text {
+    color: #212121;
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 2;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    mix-blend-mode: screen;
+  }
+  </style>
+
+<script>
+  const hero = document.querySelector('.hero')
+  const text = hero.querySelector('.text')
+  const walk = 150
+
+  function shadow(e){
+    const {offsetWidth: width, offsetHeight : height} = hero;
+    let {offsetX: x, offsetY: y} = e;
+
+    if(this !== e.target){
+      x = x + e.target.offsetLeft;
+      y = y + e.target.offsetTop;
+    }
+
+    const xWalk = Math.floor((x / width * walk) - (walk / 2))
+    const yWalk = Math.floor((y / height * walk) - (walk / 2))
+
+    console.log(xWalk, yWalk);
+
+    text.style.textShadow = `${xWalk-15}px ${yWalk}px 0 rgba(165,56,96,1)`
+  }
+
+  hero.addEventListener('mousemove', shadow);
+</script>
+</body>
+</html>
