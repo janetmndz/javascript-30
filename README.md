@@ -23,7 +23,8 @@ Full collection of live examples can also can be viewed on [CodePen](https://cod
 | 13 | Slide in on Scroll               | [CodePen](https://codepen.io/janmez/full/PgYrWd) // [Github](./13%20-%20Slide%20in%20on%20Scroll)   |
 | 14 | JavaScript References VS Copying | [Github](./14%20-%20JavaScript%20References%20VS%20Copying)                                         |
 | 15 | LocalStorage & Event Delegation  | [Codepen](https://codepen.io/janmez/full/pBJKKW) // [Github](./15%20-%20LocalStorage)               |
-| 16 | Mouse Move Shadow                | [CodePen](https://codepen.io/janmez/full/vMLxOg) // [Github](./16%20-%20Mouse%20Move%20Shadow) |
+| 16 | Mouse Move Shadow                | [CodePen](https://codepen.io/janmez/full/vMLxOg) // [Github](./16%20-%20Mouse%20Move%20Shadow)      |
+| 17 | Sort without Articles            | [CodePen](https://codepen.io/janmez/full/mgPXWj) // [Github](./17%20-%20Sort%20Without%20Articles)  |
 
 ## Details 
 Github repo for [Javascript 30](https://github.com/wesbos/JavaScript30).
