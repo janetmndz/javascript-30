@@ -25,7 +25,7 @@ Full collection of live examples can also can be viewed on [CodePen](https://cod
 | 15 | LocalStorage & Event Delegation  | [Codepen](https://codepen.io/janmez/full/pBJKKW) // [Github](./15%20-%20LocalStorage)               |
 | 16 | Mouse Move Shadow                | [CodePen](https://codepen.io/janmez/full/vMLxOg) // [Github](./16%20-%20Mouse%20Move%20Shadow)      |
 | 17 | Sort without Articles            | [CodePen](https://codepen.io/janmez/full/mgPXWj) // [Github](./17%20-%20Sort%20Without%20Articles)  |
-
+| 18 | Adding Up Times with Reduce   | [Github](./18%20-%20Adding%20Up%20Times%20with%20Reduce) |
 ## Details 
 Github repo for [Javascript 30](https://github.com/wesbos/JavaScript30).
 
